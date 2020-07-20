@@ -58,8 +58,16 @@ To set this up, open Tautulli and go to Settings > Notification Agents and add a
 ```
 
 ## Notes
+#### Docker Standalone
 
-#### Docker
+```
+docker run --name bojanzelic:trailer-downloader 
+  -v /path/to/settings.ini:/usr/src/app/settings.ini
+  -v /path/to/movies:/videos
+````
+
+#### Docker inside Radarr or Tautilli
+
 If you're running Radarr or Tautulli inside a Docker container and you would like to use the automated downloading script, the container will need access to the scripts and the requirements will need to be installed inside the container. An easy way of doing that is just to attach this set of scripts to the container as a volume. Then you can exec into the container and install the requirements. Here's an example of doing that with Tautulli.
 
 This will attach the scripts to the /scripts folder in the container (-v /path/to/scripts:/scripts).
