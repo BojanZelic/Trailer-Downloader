@@ -61,9 +61,10 @@ To set this up, open Tautulli and go to Settings > Notification Agents and add a
 #### Docker Standalone
 
 ```
-docker run --name bojanzelic:trailer-downloader 
-  -v /path/to/settings.ini:/usr/src/app/settings.ini
-  -v /path/to/movies:/videos
+docker run \
+  -v /path/to/settings.ini:/usr/src/app/settings.ini \
+  -v /path/to/movies:/videos \
+    bojanzelic/trailer-downloader
 ````
 
 #### Docker inside Radarr or Tautilli
